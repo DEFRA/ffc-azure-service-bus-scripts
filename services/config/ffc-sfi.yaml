@@ -5,6 +5,9 @@ topics:
   - name: ffc-sfi-parcel-spatial-request
     subscriptions:
       - ffc-sfi-parcel-spatial-request-calculator
+  - name: ffc-sfi-standards-request
+    subscriptions:
+      - ffc-sfi-standards-request
   - name: ffc-sfi-parcel-standard-request
     subscriptions:
       - ffc-sfi-parcel-standard-request-calculator
@@ -19,10 +22,16 @@ topics:
   - name: ffc-sfi-agreement-validate
     subscriptions:
       - ffc-sfi-agreement-validate-calculator
-  - name: ffc-sfi-crm-case
-  - name: ffc-sfi-crm-case-close
+  - name: ffc-sfi-agreement-validate-response
     subscriptions:
-      - ffc-sfi-crm-case-close-processing
+      - ffc-sfi-agreement-validate-response-processing
+  - name: ffc-sfi-crm-case
+  - name: ffc-sfi-crm-close
+    subscriptions:
+      - ffc-sfi-crm-close-processing
+  - name: ffc-sfi-agreement-case
+    subscriptions:
+      - ffc-sfi-agreement-case-processing
 queues:
   - name: ffc-sfi-eligibility-check-response
     enableSessions: true
