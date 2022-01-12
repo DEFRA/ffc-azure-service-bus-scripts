@@ -1,12 +1,12 @@
 show_help() {
   echo "
     Usage: scripts/test [OPTION...]
-    Build and run SFI services.
+    Delete topics
 
     Options:
       -g, --resource-group Service Bus Resource Group
       -n, --namespace-name Service Bus Namespace
-      -f, --file           File with list of queues to delete.  Each queue must be on a new line.
+      -f, --file           File with list of queues to delete.  Each queue must be on a new line
       -h, --help           display this help text
     "
 }

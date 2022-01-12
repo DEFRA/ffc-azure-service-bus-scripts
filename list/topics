@@ -1,12 +1,11 @@
 show_help() {
   echo "
     Usage: scripts/test [OPTION...]
-    Create topics
+    List all topics
 
     Options:
       -g, --resource-group Service Bus Resource Group
       -n, --namespace-name Service Bus Namespace
-      -f, --file           File with list of queues to delete.  Each queue must be on a new line
       -h, --help           display this help text
     "
 }
@@ -27,12 +26,6 @@ while [[ $# -gt 0 ]]; do
       shift
       ;;
 
-    -f|--file)
-      FILE="$2"
-      shift
-      shift
-      ;;
-
     -h|--help)   # Call a "show_help" function to display a synopsis, then exit.
       show_help
       exit
@@ -47,7 +40,5 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-while read name; do
-  az az servicebus topic create -g $RESOURCE_GROUP --namespace-name $NAMESPACE --name $name
-  echo "Created topic: $name"
-done <$FILE
+az servicebus topic list -g $RESOURCE_GROUP --namespace-name $NAMESPACE --query [].name
+
