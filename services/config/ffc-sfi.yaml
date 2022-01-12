@@ -19,6 +19,10 @@ topics:
   - name: ffc-sfi-agreement-validate
     subscriptions:
       - ffc-sfi-agreement-validate-calculator
+  - name: ffc-sfi-crm-case
+  - name: ffc-sfi-crm-case-close
+    subscriptions:
+      - ffc-sfi-crm-case-close-processing
 queues:
   - name: ffc-sfi-eligibility-check-response
     enableSessions: true
@@ -27,4 +31,6 @@ queues:
   - name: ffc-sfi-parcel-standard-request-response
     enableSessions: true
   - name: ffc-sfi-agreement-calculate-response
+    enableSessions: true
+  - name: ffc-sfi-agreement-validation
     enableSessions: true
