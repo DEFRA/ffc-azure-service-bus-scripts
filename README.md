@@ -1,24 +1,108 @@
 # Service Bus Scripts
 Scripts to support Azure Service Bus administration
 
-## Scripts
-### Prerequisites
+## Prerequisites
 - [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
-- user has already signed into target Azure tenant with `az login --tenant TENANT`
-- user has sufficient permission to manage Azure Service Bus entities
 - [yq](https://github.com/mikefarah/yq) for creating full service entities
+- user has already signed into target Azure tenant with `az login --tenant TENANT`
+- user has sufficient permissions to manage Azure Service Bus entities
 
-### Create
-- [Queues](create/queues)
-- [Topics](create/topics)
+All scripts include a help section that can be viewed by passing the `-h` or `--help` argument to the script.
 
-### Delete
-- [Queues](delete/queues)
-- [Topics](delete/topics)
+## Create
+Bulk create Service Bus entities from file.
 
-## Service
+Example file content:
+
+```
+test-entity1
+test-entity2
+```
+
+### [Queues](create/queues)
+#### Arguments
+- `-g`, `--resource-group` - Service Bus Resource Group
+- `-n`, `--namespace-name` - Service Bus Namespace
+- `-f`, `--file` - filename containing entity names
+- `-h`, `--help` 
+
+Example:
+
+`./create/queues -n myNamespace -g myResourceGroup -f example.txt`
+
+### [Topics](create/topics)
+#### Arguments
+- `-g`, `--resource-group` - Service Bus Resource Group
+- `-n`, `--namespace-name` - Service Bus Namespace
+- `-f`, `--file` - filename containing entity names
+- `-h`, `--help` 
+
+Example:
+
+`./create/topics -n myNamespace -g myResourceGroup -f example.txt`
+
+## Delete
+### [Queues](delete/queues)
+#### Arguments
+- `-g`, `--resource-group` - Service Bus Resource Group
+- `-n`, `--namespace-name` - Service Bus Namespace
+- `-f`, `--file` - filename containing entity names
+- `-h`, `--help` 
+
+Example:
+
+`./delete/queues -n myNamespace -g myResourceGroup -f example.txt`
+
+### [Topics](delete/topics)
+#### Arguments
+- `-g`, `--resource-group` - Service Bus Resource Group
+- `-n`, `--namespace-name` - Service Bus Namespace
+- `-f`, `--file` - filename containing entity names
+- `-h`, `--help` 
+
+Example:
+
+`./delete/topics -n myNamespace -g myResourceGroup -f example.txt`
+
+## Services
 Create or delete all Azure Service Bus entities for a service.
 
 A service must have created a `.yaml` configuration file in `services/config`.
 
-- [Create](services/create)
+Example `.yaml`:
+
+```
+```
+
+### [Create](services/create)
+
+#### Arguments
+- `-g`, `--resource-group` - Service Bus Resource Group
+- `-n`, `--namespace-name` - Service Bus Namespace
+- `-s`, `--service` - service name
+- `-d`, `--developer` - suffix to be appended to each entity (optional)
+- `-h`, `--help` 
+
+Example:
+
+`./services/create -s ffc-demo -n myNamespace -g myResourceGroup`
+
+Example with developer suffix:
+
+`./services/create -s ffc-demo -n myNamespace -g myResourceGroup -d jw`
+
+### [Delete](services/delete)
+#### Arguments
+- `-g`, `--resource-group` - Service Bus Resource Group
+- `-n`, `--namespace-name` - Service Bus Namespace
+- `-s`, `--service` - service name
+- `-d`, `--developer` - suffix to be appended to each entity (optional)
+- `-h`, `--help` 
+
+Example:
+
+`./services/create -s ffc-demo -n myNamespace -g myResourceGroup`
+
+Example with developer suffix:
+
+`./services/create -s ffc-demo -n myNamespace -g myResourceGroup -d jw`
