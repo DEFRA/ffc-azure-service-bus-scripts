@@ -1,0 +1,30 @@
+topics:
+  - name: ffc-sfi-eligibility-check
+    subscriptions:
+      - ffc-sfi-eligibility-check-calculator
+  - name: ffc-sfi-parcel-spatial-request
+    subscriptions:
+      - ffc-sfi-parcel-spatial-request-calculator
+  - name: ffc-sfi-parcel-standard-request
+    subscriptions:
+      - ffc-sfi-parcel-standard-request-calculator
+  - name: ffc-sfi-agreement-calculate
+    subscriptions:
+      - ffc-sfi-agreement-calculate-calculator
+  - name: ffc-sfi-agreement-submit
+    subscriptions:
+      - ffc-sfi-agreement-submit-calculator
+      - ffc-sfi-agreement-submit-processing
+  - name: ffc-sfi-agreement-withdraw
+  - name: ffc-sfi-agreement-validate
+    subscriptions:
+      - ffc-sfi-agreement-validate-calculator
+queues:
+  - name: ffc-sfi-eligibility-check-response
+    enableSessions: true
+  - name: ffc-sfi-parcel-spatial-request-response
+    enableSessions: true
+  - name: ffc-sfi-parcel-standard-request-response
+    enableSessions: true
+  - name: ffc-sfi-agreement-calculate-response
+    enableSessions: true
