@@ -49,5 +49,5 @@ done
 
 while read name; do
   az az servicebus topic delete -g $RESOURCE_GROUP --namespace-name $NAMESPACE --name $name
-  echo "Deleted topic $name"
+  echo "Deleted topic: $name"
 done <$FILE
