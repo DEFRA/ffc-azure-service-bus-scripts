@@ -72,17 +72,23 @@ if [[ -z $SERVICE ]]; then
   exit 1
 fi
 
+if [[ $DEVELOPER ]]; then
+  SUFFIX="-$DEVELOPER"
+fi
+
 cd "${projectRoot}"
 FILE="./services/config/${SERVICE}.yaml"
 
 readarray topics < <(yq e '.topics[].name' $FILE)
 
 for topic in "${topics[@]}"; do
-  az servicebus topic create -g $RESOURCE_GROUP --namespace-name $NAMESPACE --name $topic
-  echo "Created topic: $topic"
+  topicName=$(echo "$topic$SUFFIX" | tr -d '\n')
+  az servicebus topic create -g $RESOURCE_GROUP --namespace-name $NAMESPACE --name $topicName
+  echo "Created topic: $topicName"
   readarray subscriptions < <(yq e '.topics.[] | select(.name == "ffc-pay-request").subscriptions[]' $FILE)
   for subscription in "${subscriptions[@]}"; do
-    az servicebus topic subscription create -g $RESOURCE_GROUP --namespace-name $NAMESPACE --topic-name $topic --name $subscription --max-delivery-count 10
-    echo "Created subscription: $subscription"
+    subscriptionName=$(echo "$subscription$SUFFIX" | tr -d '\n')
+    az servicebus topic subscription create -g $RESOURCE_GROUP --namespace-name $NAMESPACE --topic-name $topicName --name $subscriptionName --max-delivery-count 10
+    echo "Created subscription: $subscriptionName"
   done
 done
