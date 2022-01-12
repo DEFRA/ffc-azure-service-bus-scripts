@@ -9,61 +9,6 @@ Scripts to support Azure Service Bus administration
 
 All scripts include a help section that can be viewed by passing the `-h` or `--help` argument to the script.
 
-## Create
-Bulk create Service Bus entities from file.
-
-Example file content:
-
-```
-test-entity1
-test-entity2
-```
-
-### [Queues](create/queues)
-#### Arguments
-- `-g`, `--resource-group` - Service Bus Resource Group
-- `-n`, `--namespace-name` - Service Bus Namespace
-- `-f`, `--file` - filename containing entity names
-- `-h`, `--help` 
-
-Example:
-
-`./create/queues -n myNamespace -g myResourceGroup -f example.txt`
-
-### [Topics](create/topics)
-#### Arguments
-- `-g`, `--resource-group` - Service Bus Resource Group
-- `-n`, `--namespace-name` - Service Bus Namespace
-- `-f`, `--file` - filename containing entity names
-- `-h`, `--help` 
-
-Example:
-
-`./create/topics -n myNamespace -g myResourceGroup -f example.txt`
-
-## Delete
-### [Queues](delete/queues)
-#### Arguments
-- `-g`, `--resource-group` - Service Bus Resource Group
-- `-n`, `--namespace-name` - Service Bus Namespace
-- `-f`, `--file` - filename containing entity names
-- `-h`, `--help` 
-
-Example:
-
-`./delete/queues -n myNamespace -g myResourceGroup -f example.txt`
-
-### [Topics](delete/topics)
-#### Arguments
-- `-g`, `--resource-group` - Service Bus Resource Group
-- `-n`, `--namespace-name` - Service Bus Namespace
-- `-f`, `--file` - filename containing entity names
-- `-h`, `--help` 
-
-Example:
-
-`./delete/topics -n myNamespace -g myResourceGroup -f example.txt`
-
 ## Services
 Create or delete all Azure Service Bus entities for a service.
 
@@ -128,3 +73,110 @@ Example:
 Example with developer suffix:
 
 `./services/create -s ffc-demo -n myNamespace -g myResourceGroup -d jw`
+
+## Queues
+### [List](queues/list)
+List all queues.
+
+#### Arguments
+- `-g`, `--resource-group` - Service Bus Resource Group
+- `-n`, `--namespace-name` - Service Bus Namespace
+- `-h`, `--help` 
+
+Example:
+
+`./queues/list -n myNamespace -g myResourceGroup`
+
+### [Create](queues/create)
+Bulk create queues from file.
+
+Example file content:
+
+```
+test-entity1
+test-entity2
+```
+
+#### Arguments
+- `-g`, `--resource-group` - Service Bus Resource Group
+- `-n`, `--namespace-name` - Service Bus Namespace
+- `-f`, `--file` - filename containing entity names
+- `-h`, `--help` 
+
+Example:
+
+`./queues/create -n myNamespace -g myResourceGroup -f example.txt`
+
+### [Delete](queues/delete)
+Bulk delete queues from file.
+
+Example file content:
+
+```
+test-entity1
+test-entity2
+```
+
+#### Arguments
+- `-g`, `--resource-group` - Service Bus Resource Group
+- `-n`, `--namespace-name` - Service Bus Namespace
+- `-f`, `--file` - filename containing entity names
+- `-h`, `--help` 
+
+Example:
+
+`./queues/delete -n myNamespace -g myResourceGroup -f example.txt`
+
+## Topics
+### [List](topics/list)
+List all topics.
+
+#### Arguments
+- `-g`, `--resource-group` - Service Bus Resource Group
+- `-n`, `--namespace-name` - Service Bus Namespace
+- `-h`, `--help` 
+
+Example:
+
+`./topics/list -n myNamespace -g myResourceGroup`
+
+### [Create](topics/create)
+Bulk create topics from file.
+
+Example file content:
+
+```
+test-entity1
+test-entity2
+```
+
+#### Arguments
+- `-g`, `--resource-group` - Service Bus Resource Group
+- `-n`, `--namespace-name` - Service Bus Namespace
+- `-f`, `--file` - filename containing entity names
+- `-h`, `--help` 
+
+Example:
+
+`./topics/create -n myNamespace -g myResourceGroup -f example.txt`
+
+### [Delete](topics/delete)
+Bulk delete from file.
+
+Example file content:
+
+```
+test-entity1
+test-entity2
+```
+
+#### Arguments
+- `-g`, `--resource-group` - Service Bus Resource Group
+- `-n`, `--namespace-name` - Service Bus Namespace
+- `-f`, `--file` - filename containing entity names
+- `-h`, `--help` 
+
+Example:
+
+`./topics/delete -n myNamespace -g myResourceGroup -f example.txt`
+
