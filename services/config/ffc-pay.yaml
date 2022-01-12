@@ -4,7 +4,7 @@ topics:
       - ffc-pay-request-enrichment
   - name: ffc-pay-processing
     subscriptions:
-      - ffc-pay-processing-processor
+      - ffc-pay-processing-processing
   - name: ffc-pay-submit
     subscriptions:
       - ffc-pay-submit-submission
