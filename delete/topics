@@ -48,6 +48,6 @@ while [[ $# -gt 0 ]]; do
 done
 
 while read name; do
-  az az servicebus topic delete -g $RESOURCE_GROUP --namespace-name $NAMESPACE --name $name
+  az servicebus topic delete -g $RESOURCE_GROUP --namespace-name $NAMESPACE --name $name
   echo "Deleted topic: $name"
 done <$FILE

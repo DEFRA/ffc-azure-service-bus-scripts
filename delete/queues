@@ -48,6 +48,6 @@ while [[ $# -gt 0 ]]; do
 done
 
 while read name; do
-  az az servicebus queue delete -g $RESOURCE_GROUP --namespace-name $NAMESPACE --name $name
+  az servicebus queue delete -g $RESOURCE_GROUP --namespace-name $NAMESPACE --name $name
   echo "Deleted queue: $name"
 done <$FILE

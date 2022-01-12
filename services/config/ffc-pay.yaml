@@ -1,0 +1,16 @@
+topics:
+  - name: ffc-pay-request
+    subscriptions:
+      - ffc-pay-request-enrichment
+  - name: ffc-pay-processing
+    subscriptions:
+      - ffc-pay-processing-processor
+  - name: ffc-pay-submit
+    subscriptions:
+      - ffc-pay-submit-submission
+  - name: ffc-pay-acknowledge
+    subscriptions:
+      - ffc-pay-acknowledge-processing
+  - name: ffc-pay-return
+    subscriptions:
+      - ffc-pay-return-processing
