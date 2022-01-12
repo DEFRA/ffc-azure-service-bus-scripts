@@ -1,2 +1,2 @@
-# ffc-service-bus-scripts
-Scripts to support Service Bus administration
+Service Bus Scripts
+Scripts to support Azure Service Bus administration
