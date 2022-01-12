@@ -1,0 +1,53 @@
+show_help() {
+  echo "
+    Usage: scripts/test [OPTION...]
+    Build and run SFI services.
+
+    Options:
+      -g, --resource-group Service Bus Resource Group
+      -n, --namespace-name Service Bus Namespace
+      -f, --file           File with list of queues to delete.  Each queue must be on a new line.
+      -h, --help           display this help text
+    "
+}
+
+POSITIONAL_ARGS=()
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -g|--resource-group)
+      RESOURCE_GROUP="$2"
+      shift
+      shift
+      ;;
+
+    -n|--namespace-name)
+      NAMESPACE="$2"
+      shift
+      shift
+      ;;
+
+    -f|--file)
+      FILE="$2"
+      shift
+      shift
+      ;;
+
+    -h|--help)   # Call a "show_help" function to display a synopsis, then exit.
+      show_help
+      exit
+      ;;
+    -*|--*)
+      shift
+      ;;
+    *)
+      POSITIONAL_ARGS+=("$1")
+      shift
+      ;;
+  esac
+done
+
+while read name; do
+  az az servicebus topic delete -g $RESOURCE_GROUP --namespace-name $NAMESPACE --name $name
+  echo "Deleted topic $name"
+done <$FILE
