@@ -72,6 +72,28 @@ A service must have created a `.yaml` configuration file in `services/config`.
 Example `.yaml`:
 
 ```
+topics:
+  - name: ffc-demo-payment
+    subscriptions:
+      - ffc-demo-payment-payment
+      - ffc-demo-payment-payment-core
+  - name: ffc-demo-schedule
+    subscriptions:
+      - ffc-demo-schedule-payment
+      - ffc-demo-schedule-payment-core
+queues:
+  - name: ffc-demo-claim
+  - name: ffc-demo-calculation
+```
+
+For session enabled queues, the `sessions: true` property can be included.
+
+Example:
+
+```
+queues:
+  - name: ffc-demo-claim
+    sessions: true
 ```
 
 ### [Create](services/create)

@@ -34,12 +34,14 @@ topics:
       - ffc-sfi-agreement-case-processing
 queues:
   - name: ffc-sfi-eligibility-check-response
-    enableSessions: true
-  - name: ffc-sfi-parcel-spatial-request-response
-    enableSessions: true
-  - name: ffc-sfi-parcel-standard-request-response
-    enableSessions: true
+    sessions: true
+  - name: ffc-sfi-parcel-spatial-response
+    sessions: true
+  - name: ffc-sfi-standards-request-response
+    sessions: true
+  - name: ffc-sfi-parcel-standard-response
+    sessions: true
   - name: ffc-sfi-agreement-calculate-response
-    enableSessions: true
+    sessions: true
   - name: ffc-sfi-agreement-validation
-    enableSessions: true
+    sessions: true

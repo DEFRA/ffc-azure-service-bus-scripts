@@ -1,0 +1,12 @@
+topics:
+  - name: ffc-demo-payment
+    subscriptions:
+      - ffc-demo-payment-payment
+      - ffc-demo-payment-payment-core
+  - name: ffc-demo-schedule
+    subscriptions:
+      - ffc-demo-schedule-payment
+      - ffc-demo-schedule-payment-core
+queues:
+  - name: ffc-demo-claim
+  - name: ffc-demo-calculation

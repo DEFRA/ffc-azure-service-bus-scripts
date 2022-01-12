@@ -102,7 +102,7 @@ for queue in "${queues[@]}"; do
   args=''
   parsedQueue=$(echo "$queue" | tr -d '\n')
   queueName=$(echo "$queue$SUFFIX" | tr -d '\n')
-  read enableSessions < <(yq e ".queues.[] | select(.name == \"$parsedQueue\").enableSessions" $FILE)
+  read enableSessions < <(yq e ".queues.[] | select(.name == \"$parsedQueue\").sessions" $FILE)
 
   if [[ "$enableSessions" = true ]]; then
     args='--enable-session'
