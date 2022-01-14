@@ -7,7 +7,7 @@ topics:
       - ffc-sfi-parcel-spatial-request-calculator
   - name: ffc-sfi-standards-request
     subscriptions:
-      - ffc-sfi-standards-request
+      - ffc-sfi-standards-request-calculator
   - name: ffc-sfi-parcel-standard-request
     subscriptions:
       - ffc-sfi-parcel-standard-request-calculator
