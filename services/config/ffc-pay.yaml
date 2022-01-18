@@ -14,3 +14,12 @@ topics:
   - name: ffc-pay-return
     subscriptions:
       - ffc-pay-processing
+  - name: ffc-pay-debt-data
+    subscriptions:
+      - ffc-pay-processing
+  - name: ffc-pay-quality-check
+    subscriptions:
+      - ffc-pay-request-editor
+  - name: ffc-pay-request-edit
+    subscriptions:
+      - ffc-pay-processing
