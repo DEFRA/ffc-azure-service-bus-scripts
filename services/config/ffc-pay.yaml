@@ -2,6 +2,7 @@ topics:
   - name: ffc-pay-request
     subscriptions:
       - ffc-pay-enrichment
+  - name: ffc-pay-request-response
   - name: ffc-pay-processing
     subscriptions:
       - ffc-pay-processing
@@ -23,3 +24,6 @@ topics:
   - name: ffc-pay-request-edit
     subscriptions:
       - ffc-pay-processing
+  - name: ffc-pay-statement-data
+    subscriptions:
+      - ffc-pay-statements
