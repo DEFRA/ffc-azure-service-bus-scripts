@@ -17,11 +17,8 @@ topics:
       - ffc-pay-processing
   - name: ffc-pay-debt-data
     subscriptions:
-      - ffc-pay-processing
-  - name: ffc-pay-quality-check
-    subscriptions:
       - ffc-pay-request-editor
-  - name: ffc-pay-request-edit
+  - name: ffc-pay-quality-check
     subscriptions:
       - ffc-pay-processing
   - name: ffc-pay-statement-data
