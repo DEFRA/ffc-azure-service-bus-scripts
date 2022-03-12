@@ -24,6 +24,6 @@ topics:
   - name: ffc-pay-quality-check
     subscriptions:
       - ffc-pay-processing
-  - name: ffc-pay-statement-data
+  - name: ffc-pay-file-send
     subscriptions:
-      - ffc-pay-statements
+      - ffc-pay-file-sender
