@@ -18,6 +18,9 @@ topics:
   - name: ffc-pay-debt-data
     subscriptions:
       - ffc-pay-request-editor
+  - name: ffc-pay-debt-data-response
+    subscriptions:
+      - ffc-pay-processing
   - name: ffc-pay-manual-check
     subscriptions:
       - ffc-pay-request-editor
@@ -27,3 +30,6 @@ topics:
   - name: ffc-pay-file-send
     subscriptions:
       - ffc-pay-file-sender
+  - name: ffc-pay-file-consume
+    subscriptions:
+      - ffc-pay-file-consumer
