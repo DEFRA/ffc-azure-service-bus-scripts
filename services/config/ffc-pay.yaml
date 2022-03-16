@@ -21,7 +21,7 @@ topics:
   - name: ffc-pay-debt-data-response
     subscriptions:
       - ffc-pay-processing
-  - name: ffc-pay-manual-check
+  - name: ffc-pay-manual-check-data
     subscriptions:
       - ffc-pay-request-editor
   - name: ffc-pay-quality-check
