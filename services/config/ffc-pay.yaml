@@ -35,7 +35,7 @@ topics:
       - ffc-pay-file-consumer
   - name: ffc-pay-event
     subscriptions:
-      - ffc-pay-events
+      - ffc-pay-event
   - name: ffc-pay-event-projection
     subscriptions:
       - ffc-pay-event-projection
