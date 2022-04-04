@@ -39,6 +39,6 @@ topics:
   - name: ffc-pay-event-projection
     subscriptions:
       - ffc-pay-event-projection
-  - name: ffc-pay-alert
+  - name: ffc-pay-alerts
     subscriptions:
-      - ffc-pay-alert
+      - ffc-pay-alerts
