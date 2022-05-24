@@ -48,6 +48,7 @@ queues:
 - `-n`, `--namespace-name` - Service Bus Namespace
 - `-s`, `--service` - service name
 - `-d`, `--developer` - suffix to be appended to each entity (optional)
+- `-x`, `--no-developer-subscriptions` - do not apply suffix to subscriptions (optional)
 - `-h`, `--help` 
 
 Example:
