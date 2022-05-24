@@ -43,6 +43,11 @@ while [[ $# -gt 0 ]]; do
       shift
       ;;
 
+    -x|--no-developer-subscriptions)
+      NO_DEVELOPER_SUBSCRIPTIONS=true      
+      shift
+      ;;
+
     -h|--help)   # Call a "show_help" function to display a synopsis, then exit.
       show_help
       exit
@@ -74,6 +79,10 @@ fi
 
 if [[ $DEVELOPER ]]; then
   SUFFIX="-$DEVELOPER"
+  echo $NO_DEVELOPER_SUBSCRIPTIONS
+  if [[ $NO_DEVELOPER_SUBSCRIPTIONS = false ]]; then
+    SUBSCRIPTION_SUFFIX="-$DEVELOPER"
+  fi
 fi
 
 cd "${projectRoot}"
@@ -90,7 +99,7 @@ for topic in "${topics[@]}"; do
   readarray subscriptions < <(yq e ".topics.[] | select(.name == \"$parsedTopic\").subscriptions[]" $FILE)
 
   for subscription in "${subscriptions[@]}"; do
-    subscriptionName=$(echo "$subscription$SUFFIX" | tr -d '\n')
+    subscriptionName=$(echo "$subscription$SUBSCRIPTION_SUFFIX" | tr -d '\n')
     az servicebus topic subscription create -g $RESOURCE_GROUP --namespace-name $NAMESPACE --topic-name $topicName --name $subscriptionName --max-delivery-count 10
     echo "Created subscription: $subscriptionName"
   done
