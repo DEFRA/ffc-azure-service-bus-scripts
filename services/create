@@ -44,7 +44,7 @@ while [[ $# -gt 0 ]]; do
       ;;
 
     -x|--no-developer-subscriptions)
-      NO_DEVELOPER_SUBSCRIPTIONS=true      
+      NO_DEVELOPER_SUBSCRIPTIONS=true
       shift
       ;;
 
@@ -79,8 +79,7 @@ fi
 
 if [[ $DEVELOPER ]]; then
   SUFFIX="-$DEVELOPER"
-  echo $NO_DEVELOPER_SUBSCRIPTIONS
-  if [[ $NO_DEVELOPER_SUBSCRIPTIONS = false ]]; then
+  if [[ $NO_DEVELOPER_SUBSCRIPTIONS != true ]]; then
     SUBSCRIPTION_SUFFIX="-$DEVELOPER"
   fi
 fi
