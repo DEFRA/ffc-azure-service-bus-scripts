@@ -9,7 +9,7 @@ topics:
   - name: ffc-pay-submit
     subscriptions:
       - ffc-pay-submission
-  - name: ffc-pay-acknowledge
+  - name: ffc-pay-acknowledgement
     subscriptions:
       - ffc-pay-processing
   - name: ffc-pay-return
