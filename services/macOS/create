@@ -1,0 +1,121 @@
+show_help() {
+  echo "
+    Usage: scripts/test [OPTION...]
+    Create all Service Bus entities for a service.
+
+    Options:
+      -g, --resource-group Service Bus Resource Group
+      -n, --namespace-name Service Bus Namespace
+      -s, --service        service name
+      -d, --developer      suffix to be appended to each entity (optional)
+      -h, --help           display this help text
+    "
+}
+
+set -e
+projectRoot="$(a="/$0"; a=${a%/*}; a=${a:-.}; a=${a#/}/; cd "$a/.." || return; pwd)"
+
+POSITIONAL_ARGS=()
+
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -g|--resource-group)
+      RESOURCE_GROUP="$2"
+      shift
+      shift
+      ;;
+
+    -n|--namespace-name)
+      NAMESPACE="$2"
+      shift
+      shift
+      ;;
+
+    -s|--service)
+      SERVICE="$2"
+      shift
+      shift
+      ;;
+
+    -d|--developer)
+      DEVELOPER="$2"
+      shift
+      shift
+      ;;
+
+    -x|--no-developer-subscriptions)
+      NO_DEVELOPER_SUBSCRIPTIONS=true
+      shift
+      ;;
+
+    -h|--help)   # Call a "show_help" function to display a synopsis, then exit.
+      show_help
+      exit
+      ;;
+    -*|--*)
+      shift
+      ;;
+    *)
+      POSITIONAL_ARGS+=("$1")
+      shift
+      ;;
+  esac
+done
+
+if [[ -z $RESOURCE_GROUP ]]; then
+  echo 'Resource Group not supplied -g/--resource-group'
+  exit 1
+fi
+
+if [[ -z $NAMESPACE ]]; then
+  echo 'Namespace not supplied -n/--namespace-name'
+  exit 1
+fi
+
+if [[ -z $SERVICE ]]; then
+  echo 'Service not supplied -s/--service'
+  exit 1
+fi
+
+if [[ $DEVELOPER ]]; then
+  SUFFIX="-$DEVELOPER"
+  if [[ $NO_DEVELOPER_SUBSCRIPTIONS != true ]]; then
+    SUBSCRIPTION_SUFFIX="-$DEVELOPER"
+  fi
+fi
+
+cd "${projectRoot}"
+FILE="../services/config/${SERVICE}.yaml"
+
+topics=($(yq e '.topics[].name' $FILE))
+
+for topic in "${topics[@]}"; do
+  parsedTopic=$(echo "$topic" | tr -d '\n')
+  topicName=$(echo "$parsedTopic$SUFFIX")
+  az servicebus topic create -g $RESOURCE_GROUP --namespace-name $NAMESPACE --name $topicName
+  echo "Created topic: $topicName"
+
+  subscriptions=($(yq e ".topics.[] | select(.name == \"$parsedTopic\").subscriptions[]" $FILE))
+
+  for subscription in "${subscriptions[@]}"; do
+    subscriptionName=$(echo "$subscription$SUBSCRIPTION_SUFFIX" | tr -d '\n')
+    az servicebus topic subscription create -g $RESOURCE_GROUP --namespace-name $NAMESPACE --topic-name $topicName --name $subscriptionName --max-delivery-count 10
+    echo "Created subscription: $subscriptionName"
+  done
+done
+
+queues=($(yq e '.queues[].name' $FILE))
+
+for queue in "${queues[@]}"; do
+  args=''
+  parsedQueue=$(echo "$queue" | tr -d '\n')
+  queueName=$(echo "$queue$SUFFIX" | tr -d '\n')
+  enableSessions=($(yq e ".queues.[] | select(.name == \"$parsedQueue\").sessions" $FILE))
+
+  if [[ "$enableSessions" = true ]]; then
+    args='--enable-session'
+  fi
+
+  az servicebus queue create -g $RESOURCE_GROUP --namespace-name $NAMESPACE --name $queueName $args
+  echo "Created queue: $queueName"
+done

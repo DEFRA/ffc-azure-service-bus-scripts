@@ -43,13 +43,15 @@ queues:
 
 ### [Create](services/create)
 
+#### [For MacOS users](/services/macOS/create)
+
 #### Arguments
 - `-g`, `--resource-group` - Service Bus Resource Group
 - `-n`, `--namespace-name` - Service Bus Namespace
 - `-s`, `--service` - service name
 - `-d`, `--developer` - suffix to be appended to each entity (optional)
 - `-x`, `--no-developer-subscriptions` - do not apply suffix to subscriptions (optional)
-- `-h`, `--help` 
+- `-h`, `--help`
 
 Example:
 
@@ -60,12 +62,15 @@ Example with developer suffix:
 `./services/create -s ffc-demo -n myNamespace -g myResourceGroup -d jw`
 
 ### [Delete](services/delete)
+
+#### [For MacOS users](/services/macOS/delete)
+
 #### Arguments
 - `-g`, `--resource-group` - Service Bus Resource Group
 - `-n`, `--namespace-name` - Service Bus Namespace
 - `-s`, `--service` - service name
 - `-d`, `--developer` - suffix to be appended to each entity (optional)
-- `-h`, `--help` 
+- `-h`, `--help`
 
 Example:
 
@@ -82,7 +87,7 @@ List all queues.
 #### Arguments
 - `-g`, `--resource-group` - Service Bus Resource Group
 - `-n`, `--namespace-name` - Service Bus Namespace
-- `-h`, `--help` 
+- `-h`, `--help`
 
 Example:
 
@@ -102,7 +107,7 @@ test-entity2
 - `-g`, `--resource-group` - Service Bus Resource Group
 - `-n`, `--namespace-name` - Service Bus Namespace
 - `-f`, `--file` - filename containing entity names
-- `-h`, `--help` 
+- `-h`, `--help`
 
 Example:
 
@@ -122,7 +127,7 @@ test-entity2
 - `-g`, `--resource-group` - Service Bus Resource Group
 - `-n`, `--namespace-name` - Service Bus Namespace
 - `-f`, `--file` - filename containing entity names
-- `-h`, `--help` 
+- `-h`, `--help`
 
 Example:
 
@@ -135,7 +140,7 @@ List all topics.
 #### Arguments
 - `-g`, `--resource-group` - Service Bus Resource Group
 - `-n`, `--namespace-name` - Service Bus Namespace
-- `-h`, `--help` 
+- `-h`, `--help`
 
 Example:
 
@@ -155,7 +160,7 @@ test-entity2
 - `-g`, `--resource-group` - Service Bus Resource Group
 - `-n`, `--namespace-name` - Service Bus Namespace
 - `-f`, `--file` - filename containing entity names
-- `-h`, `--help` 
+- `-h`, `--help`
 
 Example:
 
@@ -175,9 +180,8 @@ test-entity2
 - `-g`, `--resource-group` - Service Bus Resource Group
 - `-n`, `--namespace-name` - Service Bus Namespace
 - `-f`, `--file` - filename containing entity names
-- `-h`, `--help` 
+- `-h`, `--help`
 
 Example:
 
 `./topics/delete -n myNamespace -g myResourceGroup -f example.txt`
-
