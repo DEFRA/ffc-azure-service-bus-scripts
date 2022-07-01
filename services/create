@@ -87,7 +87,7 @@ fi
 cd "${projectRoot}"
 FILE="./services/config/${SERVICE}.yaml"
 
-readarray topics < <(yq e '.topics[].name' $FILE)
+topics=($(yq e '.topics[].name' $FILE))
 
 for topic in "${topics[@]}"; do
   parsedTopic=$(echo "$topic" | tr -d '\n')
@@ -95,7 +95,7 @@ for topic in "${topics[@]}"; do
   az servicebus topic create -g $RESOURCE_GROUP --namespace-name $NAMESPACE --name $topicName
   echo "Created topic: $topicName"
 
-  readarray subscriptions < <(yq e ".topics.[] | select(.name == \"$parsedTopic\").subscriptions[]" $FILE)
+  subscriptions=($(yq e ".topics.[] | select(.name == \"$parsedTopic\").subscriptions[]" $FILE))
 
   for subscription in "${subscriptions[@]}"; do
     subscriptionName=$(echo "$subscription$SUBSCRIPTION_SUFFIX" | tr -d '\n')
@@ -104,13 +104,13 @@ for topic in "${topics[@]}"; do
   done
 done
 
-readarray queues < <(yq e '.queues[].name' $FILE)
+queues=($(yq e '.queues[].name' $FILE))
 
 for queue in "${queues[@]}"; do
   args=''
   parsedQueue=$(echo "$queue" | tr -d '\n')
   queueName=$(echo "$queue$SUFFIX" | tr -d '\n')
-  read enableSessions < <(yq e ".queues.[] | select(.name == \"$parsedQueue\").sessions" $FILE)
+  enableSessions=($(yq e ".queues.[] | select(.name == \"$parsedQueue\").sessions" $FILE))
 
   if [[ "$enableSessions" = true ]]; then
     args='--enable-session'
