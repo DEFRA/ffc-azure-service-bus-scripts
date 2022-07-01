@@ -43,8 +43,6 @@ queues:
 
 ### [Create](services/create)
 
-#### [For MacOS users](/services/macOS/create)
-
 #### Arguments
 - `-g`, `--resource-group` - Service Bus Resource Group
 - `-n`, `--namespace-name` - Service Bus Namespace
@@ -62,8 +60,6 @@ Example with developer suffix:
 `./services/create -s ffc-demo -n myNamespace -g myResourceGroup -d jw`
 
 ### [Delete](services/delete)
-
-#### [For MacOS users](/services/macOS/delete)
 
 #### Arguments
 - `-g`, `--resource-group` - Service Bus Resource Group

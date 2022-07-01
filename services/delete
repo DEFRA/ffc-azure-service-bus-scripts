@@ -79,7 +79,7 @@ fi
 cd "${projectRoot}"
 FILE="./services/config/${SERVICE}.yaml"
 
-readarray topics < <(yq e '.topics[].name' $FILE)
+topics=($(yq e '.topics[].name' $FILE))
 
 for topic in "${topics[@]}"; do
   parsedTopic=$(echo "$topic" | tr -d '\n')
@@ -88,7 +88,7 @@ for topic in "${topics[@]}"; do
   echo "Deleted topic: $topicName"
 done
 
-readarray queues < <(yq e '.queues[].name' $FILE)
+queues=($(yq e '.queues[].name' $FILE))
 
 for queue in "${queues[@]}"; do
   queueName=$(echo "$queue$SUFFIX" | tr -d '\n')
