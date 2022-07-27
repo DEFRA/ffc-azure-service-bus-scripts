@@ -1,0 +1,15 @@
+queues:
+    - name: ffc-ahwr-application-request
+    - name: ffc-ahwr-application-response
+      sessions: true
+    - name: ffc-ahwr-backoffice-request
+    - name: ffc-ahwr-backoffice-response
+      sessions: true
+    - name: ffc-ahwr-eligibility-request
+    - name: ffc-ahwr-eligibility-response
+      sessions: true
+    - name: ffc-ahwr-fetch-application-request
+    - name: ffc-ahwr-fetch-application-response
+      sessions: true
+    - name: ffc-ahwr-event
+    
