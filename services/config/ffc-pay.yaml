@@ -51,3 +51,6 @@ topics:
   - name: ffc-pay-statements
     subscriptions:
       - ffc-pay-statement-generator
+  - name: ffc-pay-statement-publish
+    subscriptions:
+      - ffc-pay-statement-publisher
