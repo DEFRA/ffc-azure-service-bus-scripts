@@ -59,6 +59,10 @@ Example with developer suffix:
 
 `./services/create -s ffc-demo -n myNamespace -g myResourceGroup -d jw`
 
+Example with environment suffix for Topic but not Subscription:
+
+`./services/create -s ffc-demo -n myNamespace -g myResourceGroup -d snd -x`
+
 ### [Delete](services/delete)
 
 #### Arguments
@@ -70,11 +74,11 @@ Example with developer suffix:
 
 Example:
 
-`./services/create -s ffc-demo -n myNamespace -g myResourceGroup`
+`./services/delete -s ffc-demo -n myNamespace -g myResourceGroup`
 
 Example with developer suffix:
 
-`./services/create -s ffc-demo -n myNamespace -g myResourceGroup -d jw`
+`./services/delete -s ffc-demo -n myNamespace -g myResourceGroup -d jw`
 
 ## Queues
 ### [List](queues/list)
