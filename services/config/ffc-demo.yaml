@@ -10,3 +10,4 @@ topics:
 queues:
   - name: ffc-demo-claim
   - name: ffc-demo-calculation
+  - name: ffc-demo-apply
