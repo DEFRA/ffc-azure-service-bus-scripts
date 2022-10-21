@@ -33,6 +33,7 @@ topics:
   - name: ffc-pay-file-send
     subscriptions:
       - ffc-pay-file-sender
+      - ffc-pay-file-publisher
   - name: ffc-pay-file-consume
     subscriptions:
       - ffc-pay-file-consumer
