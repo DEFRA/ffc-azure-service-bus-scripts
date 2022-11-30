@@ -55,6 +55,4 @@ topics:
   - name: ffc-pay-statement-publish
     subscriptions:
       - ffc-pay-statement-publisher
-  - name: ffc-pay-statement-crm
-    subscriptions:
       - crm
