@@ -46,15 +46,3 @@ topics:
   - name: ffc-pay-alerts
     subscriptions:
       - ffc-pay-alerts
-  - name: ffc-pay-statement-data
-    subscriptions:
-      - ffc-pay-statement-constructor
-  - name: ffc-pay-statements
-    subscriptions:
-      - ffc-pay-statement-generator
-  - name: ffc-pay-statement-publish
-    subscriptions:
-      - ffc-pay-statement-publisher
-  - name: ffc-pay-statement-crm
-    subscriptions:
-      - crm
