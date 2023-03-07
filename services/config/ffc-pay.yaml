@@ -40,6 +40,9 @@ topics:
   - name: ffc-pay-event
     subscriptions:
       - ffc-pay-event
+  - name: ffc-pay-events
+    subscriptions:
+      - ffc-pay-event-hub
   - name: ffc-pay-event-projection
     subscriptions:
       - ffc-pay-event-projection
