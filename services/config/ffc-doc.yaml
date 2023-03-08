@@ -1,0 +1,31 @@
+topics:
+  - name: ffc-pay-processing
+    subscriptions:
+      - ffc-pay-processing
+      - ffc-doc-statement-constructor
+      - ffc-pay-statement-constructor
+  - name: ffc-pay-submit
+    subscriptions:
+      - ffc-pay-submission
+      - ffc-doc-statement-constructor
+      - ffc-pay-statement-constructor
+  - name: ffc-pay-return
+    subscriptions:
+      - ffc-pay-processing
+      - ffc-doc-statement-constructor
+      - ffc-pay-statement-constructor
+  - name: ffc-doc-statement-data
+    subscriptions:
+      - ffc-doc-statement-constructor
+      - ffc-pay-statement-constructor
+  - name: ffc-doc-statements
+    subscriptions:
+      - ffc-doc-statement-generator
+      - ffc-pay-statement-generator
+  - name: ffc-doc-statement-publish
+    subscriptions:
+      - ffc-doc-statement-publisher
+      - ffc-pay-statement-publisher
+  - name: ffc-doc-statement-crm
+    subscriptions:
+      - crm
