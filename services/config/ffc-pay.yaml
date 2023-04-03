@@ -49,3 +49,9 @@ topics:
   - name: ffc-pay-alerts
     subscriptions:
       - ffc-pay-alerts
+  - name: ffc-pay-data-request
+    subscriptions:
+      - ffc-pay-data-hub
+queues:
+  - name: ffc-pay-data-request-response
+    sessions: true
