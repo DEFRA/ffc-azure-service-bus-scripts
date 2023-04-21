@@ -26,7 +26,7 @@ topics:
     subscriptions:
       - ffc-doc-statement-publisher
       - ffc-pay-statement-publisher
-  - name: ffc-doc-statement-crm
+  - name: ffc-pay-statement-crm
     subscriptions:
       - crm
   - name: ffc-doc-statement-data
