@@ -49,6 +49,9 @@ topics:
   - name: ffc-pay-alerts
     subscriptions:
       - ffc-pay-alerts
+  - name: ffc-pay-alert
+    subscriptions:
+      - ffc-pay-alerting
   - name: ffc-pay-data-request
     subscriptions:
       - ffc-pay-data-hub
