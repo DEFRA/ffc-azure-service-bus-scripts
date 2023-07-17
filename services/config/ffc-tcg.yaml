@@ -1,0 +1,7 @@
+topics:
+  - name: ffc-tcg-eligibility-request
+    subscriptions:
+      - ffc-tcg-eligibility
+queues:
+  - name: ffc-tcg-eligibility-response
+    sessions: true
