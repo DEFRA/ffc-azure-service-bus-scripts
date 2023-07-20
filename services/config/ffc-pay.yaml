@@ -2,22 +2,27 @@ topics:
   - name: ffc-pay-request
     subscriptions:
       - ffc-pay-enrichment
+      - ffc-pay-tracking
   - name: ffc-pay-request-response
   - name: ffc-pay-processing
     subscriptions:
       - ffc-pay-processing
       - ffc-pay-statement-constructor
+      - ffc-pay-tracking
   - name: ffc-pay-submit
     subscriptions:
       - ffc-pay-submission
       - ffc-pay-statement-constructor
+      - ffc-pay-tracking
   - name: ffc-pay-acknowledgement
     subscriptions:
       - ffc-pay-processing
+      - ffc-pay-tracking
   - name: ffc-pay-return
     subscriptions:
       - ffc-pay-processing
       - ffc-pay-statement-constructor
+      - ffc-pay-tracking
   - name: ffc-pay-debt-data
     subscriptions:
       - ffc-pay-request-editor
