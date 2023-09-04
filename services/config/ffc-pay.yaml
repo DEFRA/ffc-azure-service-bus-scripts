@@ -13,6 +13,7 @@ topics:
   - name: ffc-pay-submit
     subscriptions:
       - ffc-pay-submission
+      - ffc-pay-responses
       - ffc-pay-statement-constructor
       - ffc-pay-tracking
   - name: ffc-pay-acknowledgement
