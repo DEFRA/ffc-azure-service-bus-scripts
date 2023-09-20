@@ -19,6 +19,7 @@ topics:
       - ffc-sfi-agreement-submit-calculator
       - ffc-sfi-agreement-submit-processing
   - name: ffc-sfi-agreement-withdraw
+    subscriptions:
       - ffc-sfi-agreement-withdraw-calculator
   - name: ffc-sfi-agreement-validate
     subscriptions:
