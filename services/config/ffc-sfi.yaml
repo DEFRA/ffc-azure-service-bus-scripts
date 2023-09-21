@@ -34,6 +34,13 @@ topics:
   - name: ffc-sfi-agreement-case
     subscriptions:
       - ffc-sfi-agreement-case-processing
+  - name: ffc-sfi-crm-case-closed
+    subscriptions:
+      - ffc-sfi-crm-case-closed-processing
+  - name: ffc-sfi-crm-case-create
+    subscriptions:
+    - ffc-sfi-crm-case-create-crm
+    - ffc-sfi-crm-case-closed-processing
 queues:
   - name: ffc-sfi-eligibility-check-response
     sessions: true
