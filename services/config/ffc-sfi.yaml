@@ -27,6 +27,7 @@ topics:
   - name: ffc-sfi-agreement-validate-response
     subscriptions:
       - ffc-sfi-agreement-validate-response-processing
+      - ffc-sfi-agreement-validate-response-crm
   - name: ffc-sfi-crm-case
   - name: ffc-sfi-crm-close
     subscriptions:
