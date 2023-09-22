@@ -2,6 +2,11 @@ topics:
   - name: ffc-tcg-eligibility-request
     subscriptions:
       - ffc-tcg-eligibility
+  - name: ffc-tcg-rules-engine
+    subscriptions:
+      - ffc-tcg-rules-engine
 queues:
   - name: ffc-tcg-eligibility-response
+    sessions: true
+  - name: ffc-tcg-rules-engine-response
     sessions: true
