@@ -53,6 +53,12 @@ topics:
   - name: ffc-pay-data-request
     subscriptions:
       - ffc-pay-data-hub
+  - name: ffc-pay-xb
+    subscriptions:
+      - ffc-pay-xb
+  - name: ffc-pay-xb-response
+    subscriptions:
+      - ffc-pay-processing
 queues:
   - name: ffc-pay-data-request-response
     sessions: true
