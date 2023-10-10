@@ -59,6 +59,10 @@ topics:
   - name: ffc-pay-xb-response
     subscriptions:
       - ffc-pay-processing
+  - name: ffc-pay-demographics
+    subscriptions:
+      - ffc-pay-enrichment
+      - ffc-pay-dps
 queues:
   - name: ffc-pay-data-request-response
     sessions: true
