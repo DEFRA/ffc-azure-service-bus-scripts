@@ -61,6 +61,9 @@ topics:
       - ffc-pay-processing
   - name: ffc-pay-demographics
     subscriptions:
+      - ffc-pay-demographics
+  - name: ffc-pay-customer
+    subscriptions:
       - ffc-pay-enrichment
       - ffc-pay-dps
 queues:
