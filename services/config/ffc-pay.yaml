@@ -47,6 +47,7 @@ topics:
   - name: ffc-pay-events
     subscriptions:
       - ffc-pay-event-hub
+      - fcp-reporting
   - name: ffc-pay-alert
     subscriptions:
       - ffc-pay-alerting
