@@ -4,8 +4,20 @@ Scripts to support Azure Service Bus administration
 ## Prerequisites
 - [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
 - [yq](https://github.com/mikefarah/yq) for creating full service entities
-- user has already signed into target Azure tenant with `az login --tenant TENANT`
+- user has already signed into target Azure tenant and subscription
 - user has sufficient permissions to manage Azure Service Bus entities
+
+### How to sign in to a specific tenant and subscription
+
+1. Using Azure CLI, run `az login` specifying the target tenant name
+
+    `az login --tenant <tenant-name>.onmicrosoft.com`
+
+1. Run `az account set` specifying the target subscription name
+
+    `az account set --subscription <subscription-name>`
+
+1. The scripts require the target Service Bus namespace and the Resource Group it is in. The namespace name and resource group name can be found in the Azure Portal.
 
 All scripts include a help section that can be viewed by passing the `-h` or `--help` argument to the script.
 
@@ -16,7 +28,7 @@ A service must have created a `.yaml` configuration file in `services/config`.
 
 Example `.yaml`:
 
-```
+```yaml
 topics:
   - name: ffc-demo-payment
     subscriptions:
@@ -35,7 +47,7 @@ For session enabled queues, the `sessions: true` property can be included.
 
 Example:
 
-```
+```yaml
 queues:
   - name: ffc-demo-claim
     sessions: true
