@@ -28,7 +28,7 @@ A service must have created a `.yaml` configuration file in `services/config`.
 
 Example `.yaml`:
 
-```
+```yaml
 topics:
   - name: ffc-demo-payment
     subscriptions:
@@ -47,7 +47,7 @@ For session enabled queues, the `sessions: true` property can be included.
 
 Example:
 
-```
+```yaml
 queues:
   - name: ffc-demo-claim
     sessions: true
