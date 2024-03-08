@@ -4,8 +4,12 @@ Scripts to support Azure Service Bus administration
 ## Prerequisites
 - [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
 - [yq](https://github.com/mikefarah/yq) for creating full service entities
-- user has already signed into target Azure tenant with `az login --tenant TENANT`
+- user has already signed into target Azure tenant and subscription
 - user has sufficient permissions to manage Azure Service Bus entities
+
+### How to sign in to a specific tenant and subscription
+
+1. Using Azure
 
 All scripts include a help section that can be viewed by passing the `-h` or `--help` argument to the script.
 
