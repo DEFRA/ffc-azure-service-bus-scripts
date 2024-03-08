@@ -9,7 +9,15 @@ Scripts to support Azure Service Bus administration
 
 ### How to sign in to a specific tenant and subscription
 
-1. Using Azure
+1. Using Azure CLI, run `az login` specifying the target tenant name
+
+    `az login --tenant <tenant-name>.onmicrosoft.com`
+
+1. Run `az account set` specifying the target subscription name
+
+    `az account set --subscription <subscription-name>`
+
+1. The scripts require the target Service Bus namespace and the Resource Group it is in. The namespace name and resource group name can be found in the Azure Portal.
 
 All scripts include a help section that can be viewed by passing the `-h` or `--help` argument to the script.
 
