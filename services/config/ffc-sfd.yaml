@@ -1,2 +1,6 @@
+topics:
+  - name: ffc-sfd-messages
+    subscriptions:
+    - ffc-sfd-messages-processor
 queues:
   - name: ffc-sfd-backend
