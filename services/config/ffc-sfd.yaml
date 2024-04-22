@@ -2,7 +2,7 @@ topics:
   - name: ffc-sfd-messages
     subscriptions:
       - ffc-sfd-messages-processor
-  - name: ffc-sfd-customer-receiver
+  - name: ffc-sfd-customer
     subscriptions:
       - ffc-sfd-customer-receiver-messages
 queues:
