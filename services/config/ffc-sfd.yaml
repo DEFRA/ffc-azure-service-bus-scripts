@@ -10,6 +10,9 @@ topics:
       - ffc-sfd-customer-receiver-applications  
   - name: ffc-sfd-customer-payments
     subscriptions:
-      - ffc-sfd-customer-receiver-payments  
+      - ffc-sfd-customer-receiver-payments 
+  - name: ffc-sfd-customer-preferences
+    subscriptions:
+      - ffc-sfd-customer-receiver-preferences 
 queues:
   - name: ffc-sfd-backend
