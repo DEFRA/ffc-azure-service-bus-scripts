@@ -5,5 +5,8 @@ topics:
   - name: ffc-sfd-customer
     subscriptions:
       - ffc-sfd-customer-receiver-messages
+  - name: ffc-sfd-customer-applications
+    subscriptions:
+      - ffc-sfd-customer-receiver-applications    
 queues:
   - name: ffc-sfd-backend
