@@ -14,5 +14,8 @@ topics:
   - name: ffc-sfd-customer-preferences
     subscriptions:
       - ffc-sfd-customer-receiver-preferences 
+  - name: ffc-sfd-customer-queries
+    subscriptions:
+      - ffc-sfd-customer-receiver-queries 
 queues:
   - name: ffc-sfd-backend
