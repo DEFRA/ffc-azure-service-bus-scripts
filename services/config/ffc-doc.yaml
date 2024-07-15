@@ -44,3 +44,6 @@ topics:
   - name: ffc-doc-statement-crm
     subscriptions:
       - crm
+  - name: ffc-pay-demographics-extract
+    subscriptions:
+      - ffc-doc-demographics
