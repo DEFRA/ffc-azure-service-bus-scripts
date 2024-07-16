@@ -61,6 +61,7 @@ topics:
     subscriptions:
       - ffc-pay-enrichment
       - ffc-pay-dps
+  - name: ffc-pay-demographics-extract
 queues:
   - name: ffc-pay-data-request-response
     sessions: true
