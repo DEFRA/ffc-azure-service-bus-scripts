@@ -17,7 +17,7 @@ topics:
   - name: ffc-sfd-customer-queries
     subscriptions:
       - ffc-sfd-customer-receiver-queries
-  - name: ffc-sfd-crm-events
+  - name: ffc-sfd-crm-messages
     subscriptions:
       - ffc-sfd-crm
 queues:
