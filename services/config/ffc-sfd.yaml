@@ -20,5 +20,8 @@ topics:
   - name: ffc-sfd-crm-messages
     subscriptions:
       - ffc-sfd-crm
+  - name: ffc-sfd-file-metadata
+    subscriptions:
+      - ffc-sfd-file-receiver
 queues:
   - name: ffc-sfd-backend
