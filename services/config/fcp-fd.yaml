@@ -23,5 +23,8 @@ topics:
   - name: fcp-fd-file-metadata
     subscriptions:
       - fcp-fd-file-receiver
+  - name: fcp-fd-probe-alerts
+    subscriptions:
+      - fcp-fd-probe
 queues:
   - name: fcp-fd-backend
