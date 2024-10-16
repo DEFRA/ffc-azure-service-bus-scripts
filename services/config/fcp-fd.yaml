@@ -5,26 +5,6 @@ topics:
   - name: fcp-fd-customer-messages
     subscriptions:
       - fcp-fd-customer-receiver-messages
-  - name: fcp-fd-customer-applications
+  - name: fcp-fd-comms
     subscriptions:
-      - fcp-fd-customer-receiver-applications  
-  - name: fcp-fd-customer-payments
-    subscriptions:
-      - fcp-fd-customer-receiver-payments 
-  - name: fcp-fd-customer-preferences
-    subscriptions:
-      - fcp-fd-customer-receiver-preferences 
-  - name: fcp-fd-customer-queries
-    subscriptions:
-      - fcp-fd-customer-receiver-queries
-  - name: fcp-fd-crm-messages
-    subscriptions:
-      - fcp-fd-crm
-  - name: fcp-fd-file-metadata
-    subscriptions:
-      - fcp-fd-file-receiver
-  - name: fcp-fd-probe-events
-    subscriptions:
-      - fcp-fd-probe
-queues:
-  - name: fcp-fd-backend
+        - fcp-fd-comms
