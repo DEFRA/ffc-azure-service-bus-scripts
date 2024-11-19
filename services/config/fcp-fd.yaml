@@ -8,3 +8,6 @@ topics:
   - name: fcp-fd-comms
     subscriptions:
         - fcp-fd-comms
+  - name: fcp-fd-data
+    subscriptions:
+        - fcp-fd-data
