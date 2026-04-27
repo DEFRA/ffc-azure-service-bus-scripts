@@ -62,6 +62,15 @@ topics:
       - ffc-pay-enrichment
       - ffc-pay-dps
   - name: ffc-pay-demographics-extract
+  - name: fcp-pds-data-retention
+    subscriptions:
+      - ffc-pay-processing
+      - ffc-pay-submission
+      - ffc-pay-event-hub
+      - ffc-pay-tracking
+      - ffc-pay-injection
+      - ffc-pay-request-editor
+      - ffc-pay-responses
 queues:
   - name: ffc-pay-data-request-response
     sessions: true

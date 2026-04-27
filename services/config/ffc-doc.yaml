@@ -50,3 +50,11 @@ topics:
   - name: ffc-doc-alerting
     subscriptions:
       - ffc-doc-alert
+  - name: fcp-pds-data-retention
+    subscriptions:
+      - ffc-doc-statement-data
+      - ffc-doc-statement-constructor
+      - ffc-doc-statement-generator
+  - name: ffc-doc-statement-retention
+    subscriptions:
+      - ffc-doc-statement-publisher
